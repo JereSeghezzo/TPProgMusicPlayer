@@ -21,6 +21,7 @@ public class MusicPlayerController : MonoBehaviour
     {
         SetTimeCounter();
         RestartSong();
+        if (Input.GetKeyDown("escape")) Application.Quit();
     }
 
     public void ReturnButton()

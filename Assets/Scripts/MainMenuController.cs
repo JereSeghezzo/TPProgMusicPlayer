@@ -13,6 +13,12 @@ public class MainMenuController : MonoBehaviour
     {
         GetValues();
     }
+
+    void Update()
+    {
+       if (Input.GetKeyDown("escape")) Application.Quit(); 
+    }
+
     public void PlayButton()
     {
         SceneManager.LoadScene("Music");
