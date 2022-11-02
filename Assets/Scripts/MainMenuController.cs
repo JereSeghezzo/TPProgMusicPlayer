@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+   
 public class MainMenuController : MonoBehaviour
 {
    public Slider volumeSlider;
    public Toggle muteToggle;
-
+        
     void Start()
     {
         GetValues();    
@@ -38,4 +38,5 @@ public class MainMenuController : MonoBehaviour
     {
         PlayerPrefs.SetInt("muteToggle", (muteToggle.isOn ? 1 : 0));
     }
+
 }
