@@ -9,10 +9,9 @@ public class MusicPlayerController : MonoBehaviour
 
     void Awake()
     {
-        song = GameObject.Find("MusicPlayerController").GetComponent<AudioSource>();
+        song = GetComponent<AudioSource>();
         song.volume = PlayerPrefs.GetFloat("currentVolume");
-        song.time = PlayerPrefs.GetFloat("timeCounter");
-
+        song.time = PlayerPrefs.GetInt("timeCounter");
         song.Play();
     }
 
@@ -31,7 +30,7 @@ public class MusicPlayerController : MonoBehaviour
 
     void SetTimeCounter()
     {
-        PlayerPrefs.SetFloat("timeCounter", song.time);
+        PlayerPrefs.SetInt("timeCounter", Mathf.RoundToInt(song.time));
     }
 
     void RestartSong()
