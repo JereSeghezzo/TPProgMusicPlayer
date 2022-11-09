@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MusicPlayerController : MonoBehaviour
 {
-    AudioSource song;
+    AudioSource audioSource;
 
     void Awake()
     {
-        song = GetComponent<AudioSource>();
-        song.volume = PlayerPrefs.GetFloat("currentVolume");
-        song.time = PlayerPrefs.GetInt("timeCounter");
-        song.Play();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("currentVolume");
+        audioSource.time = PlayerPrefs.GetInt("timeCounter");
+        audioSource.Play();
     }
 
 
@@ -30,11 +30,11 @@ public class MusicPlayerController : MonoBehaviour
 
     void SetTimeCounter()
     {
-        PlayerPrefs.SetInt("timeCounter", Mathf.RoundToInt(song.time));
+        PlayerPrefs.SetInt("timeCounter", Mathf.RoundToInt(audioSource.time));
     }
 
     void RestartSong()
     {
-        if (Input.GetKeyDown("space")) song.time = 0f;
+        if (Input.GetKeyDown("space")) audioSource.time = 0f;
     }
 }
